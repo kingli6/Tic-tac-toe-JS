@@ -36,3 +36,17 @@ body {
   border: 15px solid green;
   box-sizing: border-box;
 }
+
+.cross {
+  height: 90px;
+  width: 90px;
+  position: relative;
+}
+/* /https://www.youtube.com/watch?v=DRaWr0Dcbl0  15:10 */
+.cross:before,
+.cross:after {
+  content: '';
+  position: absolute;
+  background-color: pink;
+}
+/* would be nice to break down the css and understand [ ] */
