@@ -41,18 +41,27 @@ body {
   height: 90px;
   width: 90px;
   position: relative;
+  /* /to change the plus to cross, to tilt it 16:46 */
+  transform: rotate(45deg);
 }
 /* /https://www.youtube.com/watch?v=DRaWr0Dcbl0  15:10 */
 .cross:before,
 .cross:after {
   content: '';
   position: absolute;
-  background-color: pink;
+  background-color: rgb(240, 240, 9);
 }
 /* would be nice to break down the css and understand [ ] */
 .cross:before {
   left: 50%;
   width: 30%;
-  margin-left: -15;
+  margin-left: -15%;
   height: 100%;
+}
+
+.cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
 }
