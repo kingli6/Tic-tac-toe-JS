@@ -24,7 +24,11 @@ function addGo(e) {
   // console.log(e.target);
   const goDisplay = document.createElement('div');
   // ! you create an object with css and add it to the| html element | the page
-  goDisplay.classList.add('cross');
+  goDisplay.classList.add(go); //17:50 ? adding go variable ('cross' -classname)
   // .append -to place it in
   e.target.append(goDisplay); //addGo function is triggered [ ]
+  // 18:11 === 'deeply equals'
+  go = go === 'circle' ? 'cross' : 'circle';
+  infoDisplay.textContent = 'it is now ' + go + "'s go.";
+  e.target.removeEventListener('click', addGo);
 }
