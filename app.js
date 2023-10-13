@@ -69,8 +69,52 @@ function checkScore() {
     if (circleWins) {
       infoDisplay.textContent = 'Circle Wins!';
       allSquares.forEach(
-        (square) => square.replaceWith(square.closeNode(ture)) //You cant remove event listeners, you need to do this.
+        (square) => square.replaceWith(square.cloneNode(true)) //You cant remove event listeners, you need to do this.
       );
+      return;
+    }
+  });
+
+  //? to return out of the loop? last step? 26:40
+  winningCombos.forEach((array) => {
+    const crossWins = array.every((cell) =>
+      allSquares[cell].firstChild?.classList.contains('cross')
+    );
+    if (crossWins) {
+      infoDisplay.textContent = 'Cross Wins!';
+      allSquares.forEach(
+        // a// error? she didnt change the squares to cross
+        (square) => square.replaceWith(square.cloneNode(ture)) //You cant remove event listeners, you need to do this.
+        // (square) => cross.replaceWith(cross.closeNode(true)) //You cant remove event listeners, you need to do this.
+        // a// ans no. cause we just have square as if logic triggers...? Line 62       (cell) => allSquares[cell].firstChild?.classList.contains('cirlce')
+      );
+      return;
     }
   });
 }
+
+//OTHER
+// https://unstoppabledomains.com/
+// tutorial https://www.youtube.com/watch?v=DRaWr0Dcbl0
+
+/*
+Found this hard? Learn the fundamentals of JavaScript from my course: https://www.codewithania.com
+
+🚀 Sign up to https://www.codewithania.com to receive access for the final code.
+____
+⭐ Check out my IDE here and get 1 month free: https://jb.gg/get_webstorm
+
+⭐ New to code and none of this is making sense? Watch my '12hr+ YouTube Coding Bootcamp' in which you will learn HTML, CSS and JavaScript Fundamentals completely from scratch. It's on my channel and its 100% free.
+
+⭐ In most videos I use Tabnine as my A.I autocompletion tool. You can download it for free here (I get no commission from this link, but am in a partnership): http://bit.ly/tabnine-top-tool
+
+⭐ You can get a blockchain domain with my affiliate link here: http://bit.ly/get-a-crypto-domain
+
+⭐ If you would like to buy me a coffee, well thank you very much that is mega kind! : https://www.buymeacoffee.com/aniakubow
+
+⭐ Sign up for weekly coding tips from my newsletter partnership: https://bit.ly/JS-tips
+
+You can also find me on:
+Twitter: https://twitter.com/ania_kubow
+Instagram: https://instagram.com/aniakubow
+*/
