@@ -21,7 +21,7 @@ function addGo(e) {
   // console.log(e.target);
   const goDisplay = document.createElement('div');
   // ! you create an object with css and add it to the| html element | the page
-  goDisplay.classList.add('circle');
+  goDisplay.classList.add('cross');
   // .append -to place it in
   e.target.append(goDisplay); //addGo function is triggered [ ]
 }

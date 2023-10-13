@@ -50,3 +50,9 @@ body {
   background-color: pink;
 }
 /* would be nice to break down the css and understand [ ] */
+.cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15;
+  height: 100%;
+}
