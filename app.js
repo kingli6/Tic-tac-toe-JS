@@ -32,4 +32,27 @@ function addGo(e) {
   // You just need to start a turn once, and for the rest of the game, you can use if to switch between them!
   infoDisplay.textContent = 'it is now ' + go + "'s go.";
   e.target.removeEventListener('click', addGo);
+  checkScore();
+}
+
+function checkScore() {
+  // .querySelectorAll looks for class of squares
+  // grabbing all the elements with the class of squares // 21:20
+  const allSquares = document.querySelectorAll('.square');
+  console.log(allSquares);
+
+  //can i make this smarter? [ ]
+  const winningCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  // now logic to check if any of the indexs is a winning combo...
+  // if allSquares from winningCombos || if allsquare or allcircles from winning combo, player wins
 }
