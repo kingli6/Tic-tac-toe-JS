@@ -2,6 +2,9 @@ const gameBoard = document.querySelector('#gameboard');
 const infoDisplay = document.querySelector('#info');
 const startCells = ['', '', '', '', '', '', '', '', ''];
 
+let go = 'circle';
+infoDisplay.textContent = 'Circle goes first'; // ?? how come this falls under the gameboard?
+
 function createBoard() {
   // !! adding _ to cell ("_cell") variable means we won't be using it...
   startCells.forEach((_cell, index) => {
