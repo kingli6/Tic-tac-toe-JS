@@ -29,6 +29,7 @@ function addGo(e) {
   e.target.append(goDisplay); //addGo function is triggered [ ]
   // 18:11 === 'deeply equals'
   go = go === 'circle' ? 'cross' : 'circle';
+  // You just need to start a turn once, and for the rest of the game, you can use if to switch between them!
   infoDisplay.textContent = 'it is now ' + go + "'s go.";
   e.target.removeEventListener('click', addGo);
 }
