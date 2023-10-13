@@ -54,13 +54,23 @@ function checkScore() {
   ];
 
   console.log(allSquares[0]); // 24:25
+
   // now logic to check if any of the indexs is a winning combo...
   // if allSquares from winningCombos || if allsquare or allcircles from winning combo, player wins
   winningCombos.forEach((array) => {
-    array.every(
+    const circleWins = array.every(
       (cell) => allSquares[cell].firstChild?.classList.contains('cirlce')
       // ? does it check all three indexes? does it trigger only then? or for each...? 23:40
       // yes, ans. 24:42
+
+      // .firstChild? []
     );
+    //25:25
+    if (circleWins) {
+      infoDisplay.textContent = 'Circle Wins!';
+      allSquares.forEach(
+        (square) => square.replaceWith(square.closeNode(ture)) //You cant remove event listeners, you need to do this.
+      );
+    }
   });
 }
