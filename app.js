@@ -84,7 +84,7 @@ function checkScore() {
       infoDisplay.textContent = 'Cross Wins!';
       allSquares.forEach(
         // a// error? she didnt change the squares to cross
-        (square) => square.replaceWith(square.cloneNode(ture)) //You cant remove event listeners, you need to do this.
+        (square) => square.replaceWith(square.cloneNode(true)) //You cant remove event listeners, you need to do this.
         // (square) => cross.replaceWith(cross.closeNode(true)) //You cant remove event listeners, you need to do this.
         // a// ans no. cause we just have square as if logic triggers...? Line 62       (cell) => allSquares[cell].firstChild?.classList.contains('cirlce')
       );
