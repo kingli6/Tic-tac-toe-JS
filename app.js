@@ -59,7 +59,7 @@ function checkScore() {
   // if allSquares from winningCombos || if allsquare or allcircles from winning combo, player wins
   winningCombos.forEach((array) => {
     const circleWins = array.every(
-      (cell) => allSquares[cell].firstChild?.classList.contains('cirlce')
+      (cell) => allSquares[cell].firstChild?.classList.contains('circle')
       // ? does it check all three indexes? does it trigger only then? or for each...? 23:40
       // yes, ans. 24:42
 
