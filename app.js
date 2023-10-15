@@ -3,18 +3,24 @@ const infoDisplay = document.querySelector('#info');
 const startCells = ['', '', '', '', '', '', '', '', ''];
 
 let go = 'circle';
-infoDisplay.textContent = 'Circle goes first'; // ?? how come this falls under the gameboard?
+//also ***This(go) variable appears to determine which player's turn it is (circle or cross).
 
+infoDisplay.textContent = 'Circle goes first'; // ?? how come this falls under the gameboard?
+// **this variable as well is initiated with a string, but later is easily changed to as nessary.Note: infoDisplay is a broad or meta indication for a function.
 function createBoard() {
   // !! adding _ to cell ("_cell") variable means we won't be using it...
   startCells.forEach((_cell, index) => {
     const cellElement = document.createElement('div');
+    // ADD: creates a div element
     cellElement.classList.add('square');
-    // .classList adds a class to the element: class="square"
+    // ADD: .classList adds a class="square" to the element.
     cellElement.id = index;
-    // .id adds an id to the element: id="0"
+    // ADD: a unique id is created.
+    // .id adds an id to the element: id="0","1-9"max-array-length
     cellElement.addEventListener('click', addGo);
+    // ADD: addGo function when clicked.
     gameBoard.append(cellElement);
+    //??
   });
 }
 
