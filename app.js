@@ -16,7 +16,7 @@ function createBoard() {
     // ADD: .classList adds a class="square" to the element.
     cellElement.id = index;
     // ADD: a unique id is created.
-    // .id adds an id to the element: id="0","1-9"max-array-length
+    // .id adds an id=index to the elements: id="0","1-9"max-array-length
     cellElement.addEventListener('click', addGo);
     // ADD: addGo function when clicked.
     gameBoard.append(cellElement);
@@ -31,11 +31,13 @@ function addGo(e) {
   const goDisplay = document.createElement('div');
   // ! you create an object with css and add it to the| html element | the page
   goDisplay.classList.add(go); //17:50 ? adding go variable ('cross' -classname)
-  // .append -to place it in
-  e.target.append(goDisplay); //addGo function is triggered [ ]
-  // 18:11 === 'deeply equals'
-  go = go === 'circle' ? 'cross' : 'circle';
-  // You just need to start a turn once, and for the rest of the game, you can use if to switch between them!
+  e.target.append(goDisplay); // .append -to place it in
+  // ? is e for event? when clicked. My guess: addEventListener send in info on where it's happeneing, which can be picked up by e
+  // at the place, append(goDisplay -which is a div class='square')
+
+  go = go === 'circle' ? 'cross' : 'circle'; // 18:11 === 'deeply equals'
+  // we change the go to cross
+  // !!! She uses variables in a clever way. You just need to start a turn once, and for the rest of the game, you can use if to switch between them!
   infoDisplay.textContent = 'it is now ' + go + "'s go.";
   e.target.removeEventListener('click', addGo);
   checkScore();
@@ -124,3 +126,4 @@ You can also find me on:
 Twitter: https://twitter.com/ania_kubow
 Instagram: https://instagram.com/aniakubow
 */
+⭐+💸=
