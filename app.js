@@ -64,7 +64,6 @@ function checkScore() {
   console.log(allSquares[0]); // 24:25
 
   // now logic to check if any of the indexs is a winning combo...
-  // if allSquares from winningCombos || if allsquare or allcircles from winning combo, player wins
   winningCombos.forEach((array) => {
     const circleWins = array.every(
       (cell) => allSquares[cell].firstChild?.classList.contains('circle')
